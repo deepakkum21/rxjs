@@ -121,3 +121,11 @@
         Emitted 3
         3
         Unsubscribe
+
+## HOT vs COLD Observable
+
+| Hot Observable                        | Cold Observable                             |
+| ------------------------------------- | ------------------------------------------- |
+| Multicast the data from common source | Produces the data inside                    |
+| All subscribers common data           | new Subscriber will have new data           |
+| eg:- DOM event, State, Subject        | set of values, HTTP request, Timer/Interval |
