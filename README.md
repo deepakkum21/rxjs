@@ -283,6 +283,24 @@
             console.log('Unsubscribe');
         }, 5000);
 
+## 5. range(start,end)
+
+- `Creates an Observable that emits a sequence of numbers within a specified range.`
+
+        const numbers = range(1, 3);
+        numbers.subscribe({
+            next: value => console.log(value),
+            complete: () => console.log('Complete!')
+        });
+
+        // Logs:
+        // 1
+        // 2
+        // 3
+        // 'Complete!'
+
+![range](./images/range.png)
+
 # Join Creation Operators
 
 ## 1. forkJoin(...args: any[]): Observable<any>
