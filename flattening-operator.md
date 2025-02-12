@@ -103,3 +103,11 @@
 | memory leaks easy to notice                     | memory leaks not dangerous [only one inner sub at a time] | memory leaks hard to notice |
 | values handled one by one                       | Quick reaction to new source value                        |                             |
 | possible delayed reaction & order is maintained | order is safe                                             | no definite order           |
+
+# Q. Which notifications coming from the Inner Observable does a Flattening Operator pass to the output?
+
+## next and error notifications
+
+# Q. What will happen if the Inner Observable passed to a concat/switch/mergeMap operator emits an error?
+
+## the error will be passed to output subscription and outer subscription will error out as well
