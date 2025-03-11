@@ -83,7 +83,7 @@
 ## 5. tap()
 
 - Used to perform side-effects for notifications from the source observable
-- used ofr debugging purpose
+- used for debugging purpose
 - below handlers rae present
 
   - next
@@ -98,12 +98,12 @@
               filter((value) => value > 5),
               map((value) => value * 2),
               tap({
-              next: (value) => console.log('Spy:', value),
-              complete: () => console.log('complete'),
-              error: () => console.log('error'),
-              subscribe: () => console.log('subscribe'),
-              unsubscribe: () => console.log('unsubscribe'),
-              finalize: () => console.log('finalize'),
+                   next: (value) => console.log('Spy:', value),
+                   complete: () => console.log('complete'),
+                   error: () => console.log('error'),
+                   subscribe: () => console.log('subscribe'),
+                   unsubscribe: () => console.log('unsubscribe'),
+                   finalize: () => console.log('finalize'),
               })
           )
           .subscribe((value) => console.log('Output:', value));
