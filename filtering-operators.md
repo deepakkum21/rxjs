@@ -126,6 +126,46 @@
 
 ![debounceTime](./images/debounceTime.png)
 
+```js
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => func.apply(this, args), wait);
+  };
+}
+
+const handleSearch = debounce((searchTerm) => {
+  console.log('Searching for:', searchTerm);
+}, 500);
+
+document.querySelector('#searchInput').addEventListener('input', (e) => {
+  handleSearch(e.target.value); // Executes after 500ms of no input
+});
+
+```
+
+```js
+// Throtle
+function throttle(func, wait) {
+  let lastTime = 0;
+  return function(...args) {
+    const now = new Date().getTime();
+    if (now - lastTime >= wait) {
+      func.apply(this, args);
+      lastTime = now;
+    }
+  };
+}
+
+const handleScroll = throttle(() => {
+  console.log('Scroll event triggered');
+}, 2000); // Executes once every 2 seconds at most
+
+window.addEventListener('scroll', handleScroll);
+
+```
+
 ## 7. catchError
 
 - Catches errors on the observable to be handled by returning a new observable or throwing an error.
