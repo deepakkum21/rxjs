@@ -2,7 +2,7 @@
 
 - Share source and replay specified number of emissions on subscription.
 - we will cache the HTTP response first time. It’s mandatory to store cache value in a variable, for the same observable
-
+```ts
         allUsers$: Observable<any>;
         maleUsers$: Observable<any>;
         femaleUsers$: Observable<any>;
@@ -30,3 +30,4 @@
             // shareReplay(1) means only one value will be cache
             return this.http.get('https://raw.githubusercontent.com/piyalidas10/dummy-json/main/fakeuser.json').pipe(shareReplay(1));
         }
+```
